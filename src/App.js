@@ -101,6 +101,7 @@ const App = () => {
       />
 
       <hr />
+
       {stories.isError && <p>Something went wrong ...</p>}
 
       {stories.isLoading ? (
