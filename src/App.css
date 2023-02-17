@@ -2,8 +2,12 @@
   font: 1em sans-serif;
 }
 
+.ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .container {
-  height: 100vw;
   padding: 20px;
   background: #83a4d4; /* fallback for old browsers */
   background: linear-gradient(to left, #b6fbff, #83a4d4);
@@ -72,6 +76,16 @@
   transition: all 0.1s ease-in;
 }
 
+.moreButton {
+  margin-left: 46%;
+  background: #171212;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
 .button {
   background: transparent;
   border: 1px solid #171212;
@@ -93,6 +107,8 @@
 }
 
 .button_small {
+  background: transparent;
+  border: none;
   padding: 5px;
 }
 
