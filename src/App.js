@@ -158,7 +158,10 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1 className="headline-primary">My Hacker Stories</h1>
+      <h1 className="headline-primary">Hacker Stories</h1>
+      <p className="tagline">
+        A tool for finding blog posts on topics related to tech.
+      </p>
 
       <SearchForm
         searchTerm={searchTerm}
@@ -172,12 +175,19 @@ const App = () => {
 
       {stories.isError && <p>Something went wrong ...</p>}
 
-      <List list={stories.data} onRemoveItem={handleRemoveStory} />
+      <List
+        list={stories.data}
+        onRemoveItem={handleRemoveStory}
+      />
 
       {stories.isLoading ? (
         <p>Loading ...</p>
       ) : (
-        <button className="moreButton" type="button" onClick={handleMore}>
+        <button
+          className="moreButton"
+          type="button"
+          onClick={handleMore}
+        >
           More Results
         </button>
       )}
@@ -186,7 +196,10 @@ const App = () => {
 };
 
 const SearchForm = ({ searchTerm, onSearchInput, onSearchSubmit }) => (
-  <form onSubmit={onSearchSubmit} className="search-form">
+  <form
+    onSubmit={onSearchSubmit}
+    className="search-form"
+  >
     <InputWithLabel
       id="search"
       value={searchTerm}
@@ -224,7 +237,10 @@ const InputWithLabel = ({
 
   return (
     <>
-      <label htmlFor={id} className="label">
+      <label
+        htmlFor={id}
+        className="label"
+      >
         {children}
       </label>
       &nbsp;
@@ -268,7 +284,10 @@ const List = ({ list, onRemoveItem }) => {
   return (
     <ul className="ul">
       <li className="list">
-        <span className="listHeading" style={{ width: "40%" }}>
+        <span
+          className="listHeading"
+          style={{ width: "40%" }}
+        >
           <button
             className="sortButtons"
             type="button"
@@ -277,7 +296,10 @@ const List = ({ list, onRemoveItem }) => {
             Title
           </button>
         </span>
-        <span className="listHeading" style={{ width: "30%" }}>
+        <span
+          className="listHeading"
+          style={{ width: "30%" }}
+        >
           <button
             className="sortButtons"
             type="button"
@@ -286,7 +308,10 @@ const List = ({ list, onRemoveItem }) => {
             Author
           </button>
         </span>
-        <span className="listHeading" style={{ width: "10%" }}>
+        <span
+          className="listHeading"
+          style={{ width: "10%" }}
+        >
           <button
             className="sortButtons"
             type="button"
@@ -295,7 +320,10 @@ const List = ({ list, onRemoveItem }) => {
             Comments
           </button>
         </span>
-        <span className="listHeading" style={{ width: "10%" }}>
+        <span
+          className="listHeading"
+          style={{ width: "10%" }}
+        >
           <button
             className="sortButtons"
             type="button"
@@ -304,12 +332,19 @@ const List = ({ list, onRemoveItem }) => {
             Points
           </button>
         </span>
-        <span className="listHeading" style={{ width: "10%" }}>
+        <span
+          className="listHeading"
+          style={{ width: "10%" }}
+        >
           Dismiss?
         </span>
       </li>
       {sortedList.map((item) => (
-        <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
+        <Item
+          key={item.objectID}
+          item={item}
+          onRemoveItem={onRemoveItem}
+        />
       ))}
     </ul>
   );
@@ -329,7 +364,10 @@ const Item = ({ item, onRemoveItem }) => (
         onClick={() => onRemoveItem(item)}
         className="button button_small"
       >
-        <Check height="18px" width="18px" />
+        <Check
+          height="18px"
+          width="18px"
+        />
       </button>
     </span>
   </li>
